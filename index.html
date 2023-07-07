@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Cartão de Visita</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      background-color: #111111; /* Fundo preto */
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #00aaff;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .card {
+      background-color: #001122;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      width: 400px; /* Aumenta a largura do card */
+      border: 2px solid #ffffff; /* Adiciona bordas brancas */
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-color: transparent; /* Fundo transparente */
+    }
+
+    .star {
+      position: absolute;
+      background-color: #ffffff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .youtube-icon {
+      width: 40px; /* Ajuste o tamanho do ícone conforme necessário */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="card">
+    <h1>YouTuber</h1>
+    <p>YuriCosmonauta</p>
+    <a href="https://www.youtube.com/@YuriCosmonauta" target="_blank">
+      <img src="youtube-icon-6278264_960_720.webp" alt="Acesse o Canal" class="youtube-icon">
+    </a>
+    
+  </div>
+  
+  <div class="stars"></div>
+  <script>
+    // Gerar estrelas aleatórias e adicioná-las ao elemento .stars
+    const starsContainer = document.querySelector('.stars');
+    const numStars = 50;
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.width = `${Math.random() * 2 + 1}px`;
+      star.style.height = star.style.width;
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
